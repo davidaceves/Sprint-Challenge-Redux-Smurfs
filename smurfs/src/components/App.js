@@ -9,6 +9,7 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
+          <h1>Smurf Village</h1>
           <Route path="/" component={ SmurfList } />
         </div>
       </Router>
