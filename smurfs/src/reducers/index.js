@@ -44,6 +44,23 @@ const initialState = {
 
 function reducer(state = initialState, action) {
   switch (action.type) {
+    case ADD_SMURF_START:
+      return {
+        ...state,
+        addingSmurf: true,
+        error: ""
+      };
+    case FETCH_SMURF_SUCCESS:
+      return {
+        ...state,
+        addingSmurf: false,
+        smurfs: action.payload
+      }
+    case FETCH_SMURF_FAILURE:
+      return {
+        ...state, 
+        error: action.payload.status
+      }
     case FETCH_SMURF_START:
       return {
         ...state,
