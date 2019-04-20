@@ -23,6 +23,9 @@
 */
 
 import {
+  FETCH_SMURF_START,
+  FETCH_SMURF_SUCCESS,
+  FETCH_SMURF_FAILURE
 
 } from "../actions";
 
@@ -37,7 +40,27 @@ const initialState = {
 }
 
 function reducer(state = initialState, action) {
-
-}
+  switch (action.type) {
+    case FETCH_SMURF_START:
+      return {
+        ...state,
+        fetchingSmurfs: true,
+        error: ""
+      };
+    case FETCH_SMURF_SUCCESS:
+      return {
+        ...state,
+        fetchingSmurfs: false,
+        smurfs: action.payload
+      };
+    case FETCH_SMURF_FAILURE:
+      return {
+        ...state,
+        error: action.payload.status
+      };
+    default: 
+      return state;
+  }
+};
 
 export default reducer;
