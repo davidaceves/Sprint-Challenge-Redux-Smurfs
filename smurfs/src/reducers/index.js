@@ -21,3 +21,23 @@
   There is no need for 'combineReducers' in this project.
   Components can then read your store as, `state` and not `state.fooReducer`.
 */
+
+import {
+
+} from "../actions";
+
+const initialState = {
+  smurfs: [],
+  fetchingSmurfs: false,
+  addingSmurf: false,
+  updatingSmurf: false,
+  deletingSmurf: false,
+  error: null
+
+}
+
+function reducer(state = initialState, action) {
+
+}
+
+export default reducer;
