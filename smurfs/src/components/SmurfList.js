@@ -26,14 +26,15 @@ class SmurfList extends React.Component {
         });
     };
 
-    handleAddSmurf = () => {
+    handleAddSmurf = e => {
+        e.preventDefault();
         this.props.addSmurf(this.state.newSmurf);
     }
 
     render() {
         return (
             <div>
-                <div>
+                <div className="SmurfList">
                     { this.props.smurfs.map(smurf => {
                         return <Smurf key={ smurf.id } smurf={ smurf }/>
                     })}
