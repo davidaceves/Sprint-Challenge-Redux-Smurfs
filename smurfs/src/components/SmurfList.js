@@ -29,6 +29,14 @@ class SmurfList extends React.Component {
     handleAddSmurf = e => {
         e.preventDefault();
         this.props.addSmurf(this.state.newSmurf);
+
+        this.setState({
+            newSmurf: {
+                name: "",
+                age: "",
+                height: ""
+            }
+        })
     }
 
     render() {

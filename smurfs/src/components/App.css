@@ -60,6 +60,7 @@ input {
 
 button {
   width: 150px;
+  cursor: pointer;
   border: none;
   margin: 2%;
   font-size: 16px;
